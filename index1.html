@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrackMyBus - Mudarangadi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Header container for logo + title */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .header img {
+      width: 120px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .header img:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      color: #333;
+      font-size: 36px;
+      margin: 0;
+    }
+
+    select {
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      max-width: 90%;
+      margin: 30px 0;
+      transition: 0.3s ease;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    }
+
+    select option:disabled {
+      color: #999;
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 80%;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e0f7fa;
+    }
+
+    .credits {
+      font-size: 19.5px;
+      color: #333;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* 📱 Mobile Responsive Adjustments */
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .header {
+        flex-direction: column;
+      }
+
+      .header img {
+        max-width: 40%;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      th, td {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .credits {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="logo.png" alt="TrackMyBus Logo">
+    <h1>TrackMyBus - Mudarangadi</h1>
+  </div>
+
+  <div class="credits">
+    🚍 Designed & Developed by <br>
+    <strong>Pranav Nayak - 9164208227</strong><br>
+  </div>
+
+  <select id="destinationSelect" onchange="filterTable()">
+    <option value="" disabled selected hidden>-- Select Destination --</option>
+    <option value="">All</option>
+    <option value="padubidri">Padubidri</option>
+    <option value="mulki">Mulki</option>
+    <option value="yermal">Yermal</option>
+    <option value="admar">Admar</option>
+    <option value="yellur">Yellur</option>
+    <option value="paniyoor">Paniyoor</option>
+    <option value="Uchila">Uchila</option>
+    <option value="kaup">Kaup</option>
+    <option value="adve">Adve</option>
+    <option value="palimar">Palimar</option>
+    <option value="kateel">Kateel</option>
+    <option value="kuthyar">Kuthyar</option>
+    <option value="shirva">Shirva</option>
+    <option value="belman">Belman</option>
+    <option value="bantakal">Bantakal</option>
+    <option value="shankarpura">Shankarpura</option>
+    <option value="katapady">Katapady</option>
+    <option value="udupi">Udupi</option>
+    <option value="mundkur">Mundkur</option>
+    <option value="kinnigoli">Kinnigoli</option>
+    <option value="balkunje">Balkunje</option>
+    <option value="Moodubelle">Moodubelle</option>
+    <option value="bailur">Bailur</option>
+  </select>
+
+  <table id="busTable">
+    <thead>
+      <tr>
+        <th>Bus Name</th>
+        <th>Trip Route</th>
+        <th>Departure Time</th>
+      </tr>
+    </thead>
+    <tbody>
+
+  <tr>
+    <td>Amarjyothi</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>06:15 AM</td>
+  </tr>
+
+  <tr>
+    <td>Maroli</td>
+    <td>Mudarangadi > Padubidri > Mangalore</td>
+    <td>06:54 AM</td>
+  </tr>
+
+  <tr>
+    <td>S.V.T</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Hebri</td>
+    <td>06:54 AM</td>
+  </tr>
+
+  <tr>
+    <td>Vikram</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>07:40 AM</td>
+  </tr>
+
+  <tr>
+    <td>Sai Ganesh Prasad</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>06:54 AM</td>
+  </tr>
+
+
+  <tr>
+    <td>Asha</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>07:50 AM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>07:52 AM</td>
+  </tr>
+
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>08:10 AM</td>
+  </tr>  
+
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Kaup > Udupi</td>
+    <td>08:24 AM</td>
+  </tr> 
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi > Padubidri > Hejamady > Mulki </td>
+    <td>08:28 AM</td>
+  </tr>
+
+  <tr>
+    <td>Star</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Kaup > Katapady > Udupi</td>
+    <td>08:30 AM</td>
+  </tr>
+
+  <tr>
+    <td>Amarjyothi</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>08:45 AM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>09:10 AM</td>
+  </tr> 
+
+
+  <tr>
+    <td>Star</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Kaup > Katapady > Udupi</td>
+    <td>09:16 AM</td>
+  </tr>
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
+    <td>9:55 AM</td>
+  </tr>
+
+  <tr>
+    <td>Vikram</td>
+    <td>Mudarangadi > Palimar</td>
+    <td>10:02 AM</td>
+  </tr>
+
+  <tr>
+    <td>Ganesh</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>10:10 AM</td>
+  </tr>
+ 
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>10:05 AM</td>
+  </tr>      
+
+  <tr>
+    <td>Sharadamba</td>
+    <td>Mudarangadi >  Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>10:10 AM</td>
+  </tr>
+
+  <tr>
+    <td>Prince</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>10:12 AM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>10:20 AM</td>
+  </tr> 
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>10:30 AM</td>
+  </tr> 
+
+
+  <tr>
+    <td>Asha</td>
+    <td>Mudarangadi > Padubidri > Mulki > Kateel</td>
+    <td>10:20 AM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>10:26 AM</td>
+  </tr>  
+
+
+  <tr>
+    <td>Celiena</td>
+    <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
+    <td>10:27 AM</td>
+  </tr>
+
+  <tr>
+    <td>Sangam</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Belman</td>
+    <td>10:45 AM</td>
+  </tr>  
+       
+	
+  <tr>
+    <td>Prince</td>
+    <td>Mudarangadi > Shirva > Bailur</td>
+    <td>10:58 AM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>11:07 AM</td>
+  </tr> 
+
+  <tr>
+    <td>Pranam</td>
+    <td>Mudarangadi > Belman > Mundkur > Kinnigoli > Balkunje</td>
+    <td>11:07 AM</td>
+  </tr>
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi >  Padubidri > Hejamady > Mulki </td>
+    <td>11:24 AM</td>
+  </tr>
+
+  <tr>
+    <td>Vikram</td>
+    <td>Mudarangadi > Yellur > Uchila > Kaup > Katapady > Udupi</td>
+    <td>11:37 AM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Kaup > Udupi</td>
+    <td>11:42 AM</td>
+  </tr> 
+	
+  <tr>
+    <td>Amarjyothi</td>
+    <td>Mudarangadi > Kuthyar >  Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>12:00 PM</td>
+  </tr>
+
+  <tr>
+    <td>Ganesh</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>12:12 PM</td>
+  </tr>
+
+  <tr>
+    <td>P.M.T</td>
+    <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
+    <td>12:34 PM</td>
+  </tr>
+
+  <tr>
+    <td>Star</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Kaup > Katapady > Udupi</td>
+    <td>12:36 PM</td>
+  </tr>
+
+  <tr>
+    <td>S.V.T</td>
+    <td> Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>12:50 PM</td>
+  </tr>
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
+    <td>12:56 PM</td>
+  </tr>
+
+  <tr>
+    <td>Asha</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > udupi</td>
+    <td>01:10 PM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>01:12 PM</td>
+  </tr> 
+
+<tr>
+   <td>AKMS</td>
+   <td>Mudarangadi > Padubidri</td>
+   <td>02:07 PM</td> 
+</tr>
+
+  <tr>
+    <td>Vikram</td>
+    <td>Mudarangadi > Yellur > Uchila > Paniyoor > Kaup > Katapady > Udupi</td>
+    <td>02:04 PM</td>
+  </tr>
+
+  <tr>
+    <td>Prince</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>02:07 PM</td>
+  </tr>
+
+  <tr>
+    <td>Sharadamba</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>02:10 PM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>02:35 PM</td>
+  </tr>      
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>02:38 PM</td>
+  </tr> 
+
+  <tr>
+    <td>Pranam</td>
+    <td>Mudarangadi > Kaup > Udupi</td>
+    <td>02:50 PM</td>
+  </tr> 
+
+<tr>
+    <td>Prince</td>
+    <td>Mudarangadi > Shirva > Bailur</td>
+    <td>02:53 PM</td>
+  </tr>
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi > Padubidri > Hejamady > Mulki </td>
+    <td>03:05 PM</td>
+  </tr>
+
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Kaup > Udupi</td>
+    <td>03:10 PM</td>
+  </tr> 
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>03:30 PM</td>
+  </tr> 
+
+  <tr>
+    <td>Vikram</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>03:35 PM</td>
+  </tr>
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
+    <td>03:45 PM</td>
+  </tr>
+
+
+  <tr>
+    <td>Sangam</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Udupi </td>
+    <td>03:56 PM</td>
+  </tr>
+
+  <tr>
+    <td>Star</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>04:08 PM</td>
+  </tr>
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi >  Padubidri > Hejamady > Mulki </td>
+    <td>04:20 PM</td>
+  </tr>
+
+
+  <tr>
+    <td>Amarjyothi</td>
+    <td>Mudarangadi > Kuthyar >  Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>04:54 PM</td>
+  </tr>
+
+  <tr>
+    <td>Ganesh</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>04:56 PM</td>
+  </tr>
+
+  <tr>
+    <td>Sharadamba</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>05:10 PM</td>
+  </tr>
+
+  <tr>
+    <td>AKMS</td>
+    <td>Mudarangadi > Yellur > Uchila > Kaup > Katapady > Udupi</td>
+    <td>05:20 PM</td>
+  </tr>
+
+  <tr>
+    <td>Prince</td>
+    <td>Mudarangadi > Shirva > Bailur</td>
+    <td>05:20 PM</td>
+  </tr>
+
+  <tr>
+    <td>KanthiI</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>05:50 PM</td>
+  </tr> 
+
+  <tr>
+    <td>Pranam</td>
+    <td>Mudarangadi > Belman > Mundkur > Kinnigoli > Balkunje</td>
+    <td>05:53 PM</td>
+  </tr>
+
+  <tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
+    <td>05:58 PM</td>
+  </tr>
+
+  <tr>
+    <td>Maroli</td>
+    <td> Mudarangadi > Kuthyar > Shirva </td>
+    <td>06:01 PM</td>
+  </tr>
+
+  <tr>
+    <td>Asha</td>
+    <td>Mudarangadi > Padubidri > Mulki > Kateel</td>
+    <td>06:15 PM</td>
+  </tr>
+
+  <tr>
+    <td>Sharadamba</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>06:21 PM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Padubidri</td>
+    <td>06:25 PM</td>
+  </tr>
+
+  <tr>
+    <td>P.M.T</td>
+    <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
+    <td>06:30 PM</td>
+  </tr>
+
+
+
+ </tbody>
+  </table>
+
+  <script>
+    function filterTable() {
+      let selected = document.getElementById("destinationSelect").value.toLowerCase();
+      let rows = document.querySelectorAll("#busTable tbody tr");
+
+      rows.forEach(row => {
+        let destinations = row.cells[1].textContent.toLowerCase();
+        row.style.display = selected === "" || destinations.includes(selected) ? "" : "none";
+      });
+    }
+  </script>
+
+</body>
+</html>
