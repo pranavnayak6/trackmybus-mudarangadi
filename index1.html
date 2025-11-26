@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TrackMyBus - Mudarangadi</title>
+  <title>Bus Timings - Mudarangadi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -142,40 +142,45 @@
 
   <div class="header">
     <img src="logo.png" alt="TrackMyBus Logo">
-    <h1>TrackMyBus - Mudarangadi</h1>
+    <h1>Bus Timings - Mudarangadi</h1>
   </div>
 
   <div class="credits">
-    🚍 Designed & Developed by <br>
+     Designed & Developed by <br>
     <strong>Pranav Nayak - 9164208227</strong><br>
   </div>
 
   <select id="destinationSelect" onchange="filterTable()">
     <option value="" disabled selected hidden>-- Select Destination --</option>
     <option value="">All</option>
-    <option value="padubidri">Padubidri</option>
+	<option value="admar">Admar</option>
+	<option value="bailur">Bailur</option>
+	<option value="balkunje">Balkunje</option>
+	<option value="bantakal">Bantakal</option>
+	<option value="belman">Belman</option>
+	<option value="hiriyadka">Hiriyadka</option>
+	<option value="katapady">Katapady</option>
+	<option value="kateel">Kateel</option>
+	<option value="kaup">Kaup</option>
+	<option value="kinnigoli">Kinnigoli</option>
+	<option value="kuthyar">Kuthyar</option>
+	<option value="manipal">Manipal</option>
+	<option value="mangalore">Mangalore</option>
+	<option value="moodubelle">Moodubelle</option>
     <option value="mulki">Mulki</option>
-    <option value="yermal">Yermal</option>
-    <option value="admar">Admar</option>
-    <option value="yellur">Yellur</option>
+	<option value="mundkur">Mundkur</option>
+	<option value="nandikoor">Nandikoor</option>
+	<option value="padubidri">Padubidri</option>
+	<option value="palimar">Palimar</option>
     <option value="paniyoor">Paniyoor</option>
-    <option value="Uchila">Uchila</option>
-    <option value="kaup">Kaup</option>
-    <option value="adve">Adve</option>
-    <option value="palimar">Palimar</option>
-    <option value="kateel">Kateel</option>
-    <option value="kuthyar">Kuthyar</option>
-    <option value="shirva">Shirva</option>
-    <option value="belman">Belman</option>
-    <option value="bantakal">Bantakal</option>
-    <option value="shankarpura">Shankarpura</option>
-    <option value="katapady">Katapady</option>
-    <option value="udupi">Udupi</option>
-    <option value="mundkur">Mundkur</option>
-    <option value="kinnigoli">Kinnigoli</option>
-    <option value="balkunje">Balkunje</option>
-    <option value="Moodubelle">Moodubelle</option>
-    <option value="bailur">Bailur</option>
+	<option value="perdoor">Perdoor</option>
+	<option value="shankarpura">Shankarpura</option>
+    <option value="shirva">Shirva</option> 
+	<option value="Uchila">Uchila</option>
+	<option value="udupi">Udupi</option>
+	<option value="yellur">Yellur</option>
+	<option value="yermal">Yermal</option>
+    
   </select>
 
   <table id="busTable">
@@ -190,32 +195,34 @@
 
   <tr>
     <td>Amarjyothi</td>
-    <td> Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi > Manipal</td>
     <td>06:15 AM</td>
   </tr>
 
-  <tr>
-    <td>Maroli</td>
-    <td>Mudarangadi > Padubidri > Mangalore</td>
-    <td>06:54 AM</td>
-  </tr>
 
   <tr>
     <td>S.V.T</td>
-    <td>Mudarangadi > Kuthyar > Shirva > Hebri</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Hebri > Udupi > Hiriyadka > Perdoor</td>
     <td>06:54 AM</td>
   </tr>
 
-  <tr>
+
+<tr>
+    <td>Maroli</td>
+    <td>Mudarangadi > Nandikoor > Padubidri > Mangalore</td>
+    <td>07:20 AM</td>
+  </tr>
+
+<tr>
     <td>Vikram</td>
     <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
     <td>07:40 AM</td>
   </tr>
-
+		
   <tr>
-    <td>Sai Ganesh Prasad</td>
-    <td>Mudarangadi > Padubidri</td>
-    <td>06:54 AM</td>
+    <td>Ganesh</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>07:50 AM</td>
   </tr>
 
 
@@ -227,17 +234,51 @@
 
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>07:52 AM</td>
   </tr>
 
+  <tr>
+    <td>S.V.T</td>
+    <td>Mudarangadi > Yellur > Paaniyoor > Uchilla > Kaup > Katapady > Udupi</td>
+    <td>07:53 AM</td>
+  </tr>
+		
+<tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
+    <td>07:54 AM</td>
+</tr>
+
+<tr>
+    <td>Sangam</td>
+    <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
+    <td>08:01 AM</td>
+  </tr>
 
   <tr>
-    <td>Kanthi</td>
+    <td>H.M.T</td>
+    <td>Mudarangadi > Nandikoor > Adve > Belman</td>
+    <td>08:05 AM</td>
+  </tr>
+
+  <tr>
+    <td>Sri Ganesh Prasad</td>
     <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
     <td>08:10 AM</td>
   </tr>  
 
+<tr>
+    <td>Sharadamba</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
+    <td>08:10 AM</td>
+  </tr>
+
+<tr>
+    <td>Pranam</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>08:16 AM</td>
+  </tr>
 
   <tr>
     <td>Kanthi</td>
@@ -247,13 +288,13 @@
 
   <tr>
     <td>Cekiena</td>
-    <td> Mudarangadi > Padubidri > Hejamady > Mulki </td>
+    <td> Mudarangadi > Nandikoor > Padubidri > Hejamady > Mulki </td>
     <td>08:28 AM</td>
   </tr>
 
   <tr>
     <td>Star</td>
-    <td>Mudarangadi > Kuthyar > Shirva > Kaup > Katapady > Udupi</td>
+    <td>Mudarangadi > Kuthyar > Shirva</td>
     <td>08:30 AM</td>
   </tr>
 
@@ -263,9 +304,21 @@
     <td>08:45 AM</td>
   </tr>
 
+<tr>
+    <td>S.V.T</td>
+    <td>Mudarangadi > Yellur >Paniyoor > Uchila > Kaup > Katapady > Udupi > Perdoor > Hiriyadka</td>
+    <td>08:50 AM</td>
+  </tr>
+
+<tr>
+    <td>Sharadamba</td>
+    <td>Mudarangadi > Shirva</td>
+    <td>08:55 AM</td>
+  </tr>
+		
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>09:10 AM</td>
   </tr> 
 
@@ -277,6 +330,24 @@
   </tr>
 
   <tr>
+    <td>Celiena</td>
+    <td>Mudarangadi > Kuthyar > Shirva</td>
+    <td>09:32 AM</td>
+  </tr>
+
+  <tr>
+    <td>Sharadamba</td>
+    <td>Mudarangadi > Admar > Padubidri</td>
+    <td>09:32 AM</td>
+  </tr>
+
+<tr>
+    <td>A.K.M.S</td>
+    <td>Mudarangadi > Nandikoor > Palimar</td>
+    <td>09:35 AM</td>
+  </tr>
+		
+  <tr>
     <td>Cekiena</td>
     <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
     <td>9:55 AM</td>
@@ -284,22 +355,22 @@
 
   <tr>
     <td>Vikram</td>
-    <td>Mudarangadi > Palimar</td>
+    <td>Mudarangadi > Nandikoor > Palimar</td>
     <td>10:02 AM</td>
   </tr>
 
-  <tr>
-    <td>Ganesh</td>
-    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
-    <td>10:10 AM</td>
-  </tr>
- 
 
   <tr>
     <td>Kanthi</td>
     <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
     <td>10:05 AM</td>
   </tr>      
+
+<tr>
+    <td>Priya</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
+    <td>10:05 AM</td>
+  </tr> 
 
   <tr>
     <td>Sharadamba</td>
@@ -308,16 +379,34 @@
   </tr>
 
   <tr>
-    <td>Prince</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>A.K.M.S</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>10:12 AM</td>
   </tr>
 
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>10:20 AM</td>
   </tr> 
+
+<tr>
+    <td>Asha</td>
+    <td>Mudarangadi > Nandikoor > Padubidri > Mulki > Kateel</td>
+    <td>10:20 AM</td>
+  </tr>
+
+	<tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>10:26 AM</td>
+  </tr>  
+
+<tr>
+    <td>Celiena</td>
+    <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
+    <td>10:27 AM</td>
+  </tr>
 
   <tr>
     <td>Kanthi</td>
@@ -327,53 +416,40 @@
 
 
   <tr>
-    <td>Asha</td>
-    <td>Mudarangadi > Padubidri > Mulki > Kateel</td>
-    <td>10:20 AM</td>
-  </tr>
-
-  <tr>
-    <td>Kanthi</td>
-    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
-    <td>10:26 AM</td>
-  </tr>  
-
-
-  <tr>
-    <td>Celiena</td>
-    <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
-    <td>10:27 AM</td>
-  </tr>
-
-  <tr>
     <td>Sangam</td>
     <td>Mudarangadi > Kuthyar > Shirva > Belman</td>
-    <td>10:45 AM</td>
+    <td>10:48 AM</td>
   </tr>  
        
 	
   <tr>
-    <td>Prince</td>
+    <td>A.K.M.S</td>
     <td>Mudarangadi > Shirva > Bailur</td>
     <td>10:58 AM</td>
   </tr>
 
+<tr>
+    <td>Priya</td>
+    <td>Mudarangadi > Shirva > Palli > Bailur </td>
+    <td>11:05 AM</td>
+  </tr> 
+
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>11:07 AM</td>
   </tr> 
 
   <tr>
     <td>Pranam</td>
     <td>Mudarangadi > Belman > Mundkur > Kinnigoli > Balkunje</td>
-    <td>11:07 AM</td>
+    <td>11:09 AM</td>
   </tr>
 
   <tr>
     <td>Cekiena</td>
-    <td> Mudarangadi >  Padubidri > Hejamady > Mulki </td>
-    <td>11:24 AM</td>
+    <td> Mudarangadi >  Nandikoor > Padubidri > Hejamady > Mulki </td>
+    <td>11:22 AM</td>
   </tr>
 
   <tr>
@@ -385,13 +461,13 @@
   <tr>
     <td>Kanthi</td>
     <td>Mudarangadi > Kuthyar > Shirva > Kaup > Udupi</td>
-    <td>11:42 AM</td>
+    <td>11:43 AM</td>
   </tr> 
 	
   <tr>
     <td>Amarjyothi</td>
     <td>Mudarangadi > Kuthyar >  Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
-    <td>12:00 PM</td>
+    <td>12:05 PM</td>
   </tr>
 
   <tr>
@@ -401,7 +477,7 @@
   </tr>
 
   <tr>
-    <td>P.M.T</td>
+    <td>H.M.T</td>
     <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
     <td>12:34 PM</td>
   </tr>
@@ -432,27 +508,27 @@
 
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>01:12 PM</td>
   </tr> 
 
 <tr>
-   <td>AKMS</td>
-   <td>Mudarangadi > Padubidri</td>
+    <td>A.K.M.S</td>
+    <td>Mudarangadi > Nandikkor > Palimar</td>
+    <td>01:25 PM</td>
+  </tr>
+
+<tr>
+    <td>Vikram</td>
+    <td>Mudarangadi > Nandikoor > Palimar > Balkunje</td>
+    <td>01:55 PM</td>
+  </tr>
+		
+<tr>
+   <td>Priya</td>
+   <td>Mudarangadi > Nandikoor > Padubidri</td>
    <td>02:07 PM</td> 
 </tr>
-
-  <tr>
-    <td>Vikram</td>
-    <td>Mudarangadi > Yellur > Uchila > Paniyoor > Kaup > Katapady > Udupi</td>
-    <td>02:04 PM</td>
-  </tr>
-
-  <tr>
-    <td>Prince</td>
-    <td>Mudarangadi > Padubidri</td>
-    <td>02:07 PM</td>
-  </tr>
 
   <tr>
     <td>Sharadamba</td>
@@ -460,15 +536,21 @@
     <td>02:10 PM</td>
   </tr>
 
+<tr>
+    <td>A.K.M.S</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup > Katapady > Udupi</td>
+    <td>02:15 PM</td>
+  </tr>
+		
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>Mudarangadi > Kuthyar > Shirva</td>
     <td>02:35 PM</td>
   </tr>      
 
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>02:38 PM</td>
   </tr> 
 
@@ -479,14 +561,14 @@
   </tr> 
 
 <tr>
-    <td>Prince</td>
+    <td>Priya</td>
     <td>Mudarangadi > Shirva > Bailur</td>
     <td>02:53 PM</td>
   </tr>
 
   <tr>
     <td>Cekiena</td>
-    <td> Mudarangadi > Padubidri > Hejamady > Mulki </td>
+    <td> Mudarangadi > Nandikoor > Padubidri > Hejamady > Mulki </td>
     <td>03:05 PM</td>
   </tr>
 
@@ -499,7 +581,7 @@
 
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
     <td>03:30 PM</td>
   </tr> 
 
@@ -511,8 +593,14 @@
 
   <tr>
     <td>Cekiena</td>
-    <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
+    <td> Mudarangadi > Kuthyar > Shirva </td>
     <td>03:45 PM</td>
+  </tr>
+
+<tr>
+    <td>H.M.T</td>
+    <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
+    <td>03:50 PM</td>
   </tr>
 
 
@@ -530,11 +618,22 @@
 
   <tr>
     <td>Cekiena</td>
-    <td> Mudarangadi >  Padubidri > Hejamady > Mulki </td>
+    <td> Mudarangadi > Nandikoor >  Padubidri > Hejamady > Mulki </td>
     <td>04:20 PM</td>
   </tr>
 
+<tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>04:30 PM</td>
+  </tr>
 
+<tr>
+    <td>A.K.M.S</td>
+    <td>Mudarangadi > Nandikoor > Palimar</td>
+    <td>04:50 PM</td>
+  </tr>
+		
   <tr>
     <td>Amarjyothi</td>
     <td>Mudarangadi > Kuthyar >  Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
@@ -549,27 +648,34 @@
 
   <tr>
     <td>Sharadamba</td>
-    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
-    <td>05:10 PM</td>
+    <td>Mudarangadi > Admar > Padubidri</td>
+    <td>05:06 PM</td>
   </tr>
 
   <tr>
-    <td>AKMS</td>
+    <td>A.K.M.S</td>
     <td>Mudarangadi > Yellur > Uchila > Kaup > Katapady > Udupi</td>
     <td>05:20 PM</td>
   </tr>
 
-  <tr>
-    <td>Prince</td>
+<tr>
+    <td>Priya</td>
     <td>Mudarangadi > Shirva > Bailur</td>
     <td>05:20 PM</td>
   </tr>
-
+		
   <tr>
-    <td>KanthiI</td>
-    <td>Mudarangadi > Padubidri</td>
-    <td>05:50 PM</td>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
+    <td>05:45 PM</td>
   </tr> 
+
+<tr>
+    <td>Cekiena</td>
+    <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
+    <td>05:50 PM</td>
+  </tr>
+
 
   <tr>
     <td>Pranam</td>
@@ -577,11 +683,6 @@
     <td>05:53 PM</td>
   </tr>
 
-  <tr>
-    <td>Cekiena</td>
-    <td> Mudarangadi > Kuthyar > Shirva > Moodubelle </td>
-    <td>05:58 PM</td>
-  </tr>
 
   <tr>
     <td>Maroli</td>
@@ -591,26 +692,69 @@
 
   <tr>
     <td>Asha</td>
-    <td>Mudarangadi > Padubidri > Mulki > Kateel</td>
+    <td>Mudarangadi > Nandikoor > Padubidri > Mulki > Kateel</td>
     <td>06:15 PM</td>
   </tr>
 
   <tr>
     <td>Sharadamba</td>
-    <td>Mudarangadi > Kuthyar > Shirva > Bantakal > Shankarpura > Katapady > Udupi</td>
+    <td>Mudarangadi > Kuthyar > Shirva</td>
     <td>06:21 PM</td>
   </tr>
 
   <tr>
     <td>Kanthi</td>
-    <td>Mudarangadi > Padubidri</td>
-    <td>06:25 PM</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
+    <td>06:23 PM</td>
   </tr>
 
+<tr>
+    <td>Sangam</td>
+    <td>Mudarangadi > Yellur > Paniyoor > Uchila > Kaup >Katapady > Udupi</td>
+    <td>06:25 PM</td>
+  </tr>
+
+  <tr>
+    <td>Kanthi</td>
+    <td>Mudarangadi > Kuthyar > Shirva </td>
+    <td>06:28 PM</td>
+  </tr> 
+
+
   <tr>
-    <td>P.M.T</td>
+    <td>H.M.T</td>
     <td>Mudarangadi > Admar > Yermal > Uchila > Kaup > Katapady > Udupi</td>
     <td>06:30 PM</td>
+  </tr>
+
+<tr>
+    <td>Prince</td>
+    <td>Mudarangadi > Nandikoor > Padubidri</td>
+    <td>06:40 PM</td>
+  </tr>
+
+<tr>
+    <td>Vikram</td>
+    <td>Mudarangadi > Nandikoor > Kanchinadka</td>
+    <td>07:10 PM</td>
+  </tr>
+<tr>
+	
+<td>H.M.T</td>
+    <td>Mudarangadi > Kuthyar > Shirva</td>
+    <td>07:30 PM</td>
+  </tr>
+		
+<tr>
+    <td>Ganesh</td>
+    <td>Mudarangadi > Admar > Yermal</td>
+    <td>07:30 PM</td>
+  </tr>
+		
+  <tr>
+    <td>Sangam</td>
+    <td>Mudarangadi > Shirva</td>
+    <td>08:20 PM</td>
   </tr>
 
 
@@ -632,3 +776,24 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
